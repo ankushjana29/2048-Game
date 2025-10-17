@@ -1,4 +1,5 @@
 👾 2048 Game: Aesthetic React/TypeScript Implementation: 
+
 This project is a modern, responsive implementation of the classic 2048 game, developed using React, TypeScript, and styled with Tailwind CSS to achieve a high-contrast, aesthetic dark theme. The design emphasizes clean component separation and robust, pure game logic.
 
 Project Deliverables Summary:
