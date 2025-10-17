@@ -1,0 +1,157 @@
+/*
+ * App.css: Contains all global styles, tile coloring, and animations.
+ * This file consolidates styling typically found across index.css, Board.css, and Tile.css.
+ */
+
+/* --- Global Styles and Typography --- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+/* Board Colors */
+/* New aesthetic: Deep Space Blue/Gray */
+--color-grid-background: #232d3b; /* Dark metallic blue-gray for the container */
+--color-empty-cell: #37475c; /* Slightly lighter shade for empty cells */
+--color-border-accent: #64b5f6; /* Light blue accent */
+
+/* Tile Colors - Shifted to a High-Contrast, Cool Palette (Teals, Blues, Purples) */
+--tile-bg-2: #e0e0e0;     /* Soft White */
+--tile-bg-4: #aee615;     /* Warm Gray */
+--tile-bg-8: #3d799f;     /* Steel Blue */
+--tile-bg-16: #33a7ad;    /* Cyan/Teal */
+--tile-bg-32: #2cb7a7;    /* Deep Teal */
+--tile-bg-64: #1fa08d;    /* Emerald */
+--tile-bg-128: #a67bbd;   /* Light Violet */
+--tile-bg-256: #8e5fb5;   /* Medium Violet */
+--tile-bg-512: #75479e;   /* Deep Violet */
+--tile-bg-1024: #ff8a65;  /* Soft Orange */
+--tile-bg-2048: #ff5722;  /* Vibrant Red-Orange (Final Win Color) */
+--tile-bg-4096: #ffd700;  /* Gold */
+--tile-bg-8192: #c0c0c0;  /* Silver */
+}
+
+body {
+font-family: 'Inter', sans-serif;
+/* Dark background for the entire page */
+background-color: #3c424b; /* GitHub Dark Blue-Black Background */
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+margin: 0;
+color: #fffffd; /* Off-white text */
+}
+
+/* --- Tile Styling (Applied via classes in Tile.tsx) --- */
+
+.tile-2 {
+background-color: var(--tile-bg-2);
+color: #555555; /* Darker text for soft white tiles */
+font-size: 2.5rem;
+}
+
+.tile-4 {
+background-color: var(--tile-bg-4);
+color: #555555;
+font-size: 2.5rem;
+}
+
+.tile-8 {
+background-color: var(--tile-bg-8);
+color: #ffffff; /* White text for rich color tiles */
+font-size: 2.5rem;
+}
+
+.tile-16 {
+background-color: var(--tile-bg-16);
+color: #ffffff;
+font-size: 2.5rem;
+}
+
+.tile-32 {
+background-color: var(--tile-bg-32);
+color: #ffffff;
+font-size: 2.5rem;
+}
+
+.tile-64 {
+background-color: var(--tile-bg-64);
+color: #ffffff;
+font-size: 2.5rem;
+}
+
+.tile-128 {
+background-color: var(--tile-bg-128);
+color: #ffffff;
+font-size: 2rem; /* Smaller text for 3 digits */
+}
+
+.tile-256 {
+background-color: var(--tile-bg-256);
+color: #ffffff;
+font-size: 2rem;
+}
+
+.tile-512 {
+background-color: var(--tile-bg-512);
+color: #ffffff;
+font-size: 2rem;
+}
+
+.tile-1024 {
+background-color: var(--tile-bg-1024);
+color: #ffffff;
+font-size: 1.75rem; /* Smaller for 4 digits */
+}
+
+.tile-2048 {
+background-color: var(--tile-bg-2048);
+color: #ffffff;
+font-size: 1.75rem;
+}
+
+.tile-4096 {
+background-color: var(--tile-bg-4096);
+color: #ffffff;
+font-size: 1.75rem;
+}
+
+.tile-8192 {
+background-color: var(--tile-bg-8192);
+color: #ffffff;
+font-size: 1.75rem;
+}
+
+/* Fallback for higher values */
+[data-value]:where([data-value]:not([data-value="0"])):not([class*="tile-"]) {
+background-color: #4a4a5d; /* Dark color for unknown high tiles */
+color: #ffffff;
+font-size: 1.5rem;
+}
+
+/* --- Control Button Styling --- */
+
+.control-button {
+@apply
+px-4 py-2
+rounded-lg
+shadow-lg
+font-semibold
+text-white
+transition-all
+duration-200
+hover:scale-105
+active:scale-95;
+}
+
+/* This class is used in Controls.tsx for directional buttons */
+.directional-button {
+@apply
+bg-gray-700
+hover:bg-gray-600
+text-sm
+shadow-[0_4px_0_0_#4a4a4a]
+active:shadow-none
+active:translate-y-1;
+}
